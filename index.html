@@ -3,10 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff Movement Form</title>
+    <title>Staff Movement Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #f9f9f9;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label, input, select, textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Staff Movement Form</h1>
-    <p>This is a test page to check if GitHub Pages is working.</p>
+    <h2>Staff Movement Notification Form</h2>
+    <form action="https://formsubmit.co/aira.lumawag@sedp.ph" method="POST">
+        <input type="hidden" name="_subject" value="New Staff Movement/Resignation/Promotion Notification">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_cc" value="airalumawag21@gmail.com">
+
+        <label for="branch">SPO Name:</label>
+        <select id="branch" required>
+            <option value="011-TABACO">011-TABACO</option>
+            <option value="012-BACACAY 1">012-BACACAY 1</option>
+            <option value="013-TIWI">013-TIWI</option>
+            <option value="014-MALILIPOT">014-MALILIPOT</option>
+            <option value="015-MALINAO">015-MALINAO</option>
+            <option value="017-BACACAY 2">017-BACACAY 2</option>
+            <option value="022-DARAGA">022-DARAGA</option>
+            <option value="023-ALBAY DISTRICT">023-ALBAY DISTRICT</option>
+            <option value="024-LEGAZPI PORT">024-LEGAZPI PORT</option>
+
+        </select>
+        
+        <label for="employee">Employee Name(LastName, FirstName Middle Name):</label>
+        <input type="text" id="employee" required>
+
+        <label for="informant">Informing Staff / Immediate Supervisor:</label>
+        <input type="text" id="informant" required>
+        
+        <label for="movementType">Type of Movement:</label>
+        <select id="movementType" required>
+            <option value="Resignation">Resignation</option>
+            <option value="Transfer">Transfer</option>
+            <option value="Promotion">Promotion</option>
+            <option value="Others">Others</option>
+        </select>
+        
+        <label for="effectivity date">Effectivity Date:</label>
+        <input type="date" id="Effectivity Date" required>
+
+        <label for="details">Details:</label>
+        <textarea id="details" rows="4" required></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('staffForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted successfully!');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
