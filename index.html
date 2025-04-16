@@ -105,5 +105,16 @@
         
         <button type="submit">Submit</button>
     </form>
+ <script>
+    document.getElementById('staffForm').addEventListener('submit', function(event) {
+      const emailInput = document.getElementById('email');
+      const emailValue = emailInput.value.trim().toLowerCase();
+
+      if (!emailValue.endsWith('@sedp.ph')) {
+        alert("Only @sedp.ph emails are allowed to submit this form.");
+        event.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>
